@@ -20,6 +20,10 @@ New checkers
 
   Closes #3197
 
+* Added new checker `use-implicit-booleanness``: Emitted when using collection
+  literals for boolean comparisons
+
+  Closes #4774
 
 Removed checkers
 ================
