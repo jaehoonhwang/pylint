@@ -27,8 +27,8 @@ Release date: TBA
   ``use-implicit-booleaness-not-comparison``.
 
 
-* Added new checker `use-implicit-booleanness``: Emitted when using collection
-  literals for boolean comparisons
+* Added new checker ``use-implicit-booleaness-not-comparison``: Emitted when
+  using collection literals to evaluate booleaness
 
   Closes #4774
 

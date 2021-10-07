@@ -13,13 +13,23 @@ use-implicit-booleaness-not-len:98:11:github_issue_1331_v3:Do not use `len(SEQUE
 use-implicit-booleaness-not-len:101:17:github_issue_1331_v4:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:103:9::Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:104:9::Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
+<<<<<<< HEAD
 use-implicit-booleaness-not-len:123:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
+=======
+>>>>>>> Refactor len_checker.py and merge implicit-booleaness into len_checker
 use-implicit-booleaness-not-len:124:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:125:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:126:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:127:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:128:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 use-implicit-booleaness-not-len:129:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
+<<<<<<< HEAD
 use-implicit-booleaness-not-len:170:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
 undefined-variable:182:11:github_issue_4215:Undefined variable 'undefined_var':HIGH
 undefined-variable:184:11:github_issue_4215:Undefined variable 'undefined_var2':HIGH
+=======
+use-implicit-booleaness-not-len:130:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
+use-implicit-booleaness-not-len:171:11:github_issue_1879:Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty:HIGH
+undefined-variable:183:11:github_issue_4215:Undefined variable 'undefined_var':HIGH
+undefined-variable:185:11:github_issue_4215:Undefined variable 'undefined_var2':HIGH
+>>>>>>> Refactor len_checker.py and merge implicit-booleaness into len_checker

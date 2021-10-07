@@ -103,6 +103,7 @@ def github_issue_1331_v4(*args):
 b = bool(len(z)) # [use-implicit-booleaness-not-len]
 c = bool(len('TEST') or 42) # [use-implicit-booleaness-not-len]
 
+
 def github_issue_1879():
 
     class ClassWithBool(list):
@@ -183,8 +184,3 @@ def github_issue_4215():
         pass
     if len(undefined_var2[0]):  # [undefined-variable]
         pass
-
-# pylint: disable=len-as-condition
-
-if len('TEST'):
-    pass
