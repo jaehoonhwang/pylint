@@ -20,11 +20,12 @@ New checkers
 
   Closes #3197
 
+* In length checker, ``len-as-condition`` has been renamed as
+  ``use-implicit-booleaness-not-len`` in order to be consistent with
+  ``use-implicit-booleaness-not-comparison``.
+
 * Added new checker ``use-implicit-booleaness-not-comparison``: Emitted when
   using collection literals to evaluate booleaness
-
-* Added new checker `use-implicit-booleanness``: Emitted when using collection
-  literals for boolean comparisons
 
   Closes #4774
 

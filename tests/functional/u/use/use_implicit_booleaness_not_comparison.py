@@ -89,3 +89,8 @@ b = {}
 
 if a == [] and b == {}: # [use-implicit-booleaness-not-comparison, use-implicit-booleaness-not-comparison]
     pass
+
+a, b, c = 1, None, [1,2,3]
+
+def test(a):
+    print(a == {})
