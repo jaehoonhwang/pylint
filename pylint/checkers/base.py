@@ -76,6 +76,9 @@ from astroid import nodes
 from pylint import checkers, interfaces
 from pylint import utils as lint_utils
 from pylint.checkers import utils
+from pylint.checkers.refactoring.implicit_booleaness_checker import (
+    ImplicitBooleanessChecker,
+)
 from pylint.checkers.utils import (
     infer_all,
     is_overload_stub,
@@ -1316,6 +1319,13 @@ class BasicChecker(_BasicChecker):
         def is_iterable(internal_node):
             return isinstance(internal_node, (nodes.List, nodes.Set, nodes.Dict))
 
+        # TODO: Check if datetime resolves to `time` and check for any other stateful
+        def is_stateful(internal_node: nodes.NodeNG):
+            parent_classes_names = ImplicitBooleanessChecker.base_classes_of_node(
+                internal_node
+            )
+            return any(t in parent_classes_names for t in ("time"))
+
         defaults = node.args.defaults or [] + node.args.kw_defaults or []
         for default in defaults:
             if not default:
@@ -1331,7 +1341,11 @@ class BasicChecker(_BasicChecker):
             ):
                 if value is default:
                     msg = DEFAULT_ARGUMENT_SYMBOLS[value.qname()]
-                elif isinstance(value, astroid.Instance) or is_iterable(value):
+                elif (
+                    isinstance(value, astroid.Instance)
+                    or is_iterable(value)
+                    or is_stateful(value)
+                ):
                     # We are here in the following situation(s):
                     #   * a dict/set/list/tuple call which wasn't inferred
                     #     to a syntax node ({}, () etc.). This can happen
@@ -1339,7 +1353,7 @@ class BasicChecker(_BasicChecker):
                     #     the inference.
                     #   * a variable from somewhere else, which turns out to be a list
                     #     or a dict.
-                    if is_iterable(default):
+                    if is_iterable(default) or is_stateful(default):
                         msg = value.pytype()
                     elif isinstance(default, nodes.Call):
                         msg = f"{value.name}() ({value.qname()})"
